@@ -151,3 +151,8 @@ docs/pages/versions/*/react-native/*.diff
 **/ios/.xcode.env.local
 
 .expo
+android/app/debug.keystore
+android/app/google-services.json
+config/firebaseConfig.ts
+google-services.json
+GoogleService-Info.plist
