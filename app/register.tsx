@@ -10,7 +10,7 @@ const Page = () => {
 
     const [username, setUsername] = React.useState('itzyashh')
     const [password, setPassword] = React.useState('123456@fb')
-    const [email, setEmail] = React.useState('yash@rndev.com')
+    const [email, setEmail] = React.useState('yashjadhav1502@gmail.com')
 
     const { mutate } = useMutation<FirebaseAuthTypes.UserCredential>({
         mutationFn: async () => registerUser(email, password),

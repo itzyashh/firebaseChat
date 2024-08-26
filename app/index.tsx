@@ -39,6 +39,7 @@ const Page = () => {
            : <Text style={styles.btnText}>Login</Text>}
         </Pressable>
         <Text style={styles.text2}>Don't have an account? <Link style={styles.special} href="/register">Register</Link></Text>
+       <Link style={[styles.text2,{marginTop:0}]} href={'/forget-password'} >Forgot password?</Link>
     </View>
   )
 }

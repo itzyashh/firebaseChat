@@ -21,3 +21,12 @@ export const loginUser = async (email: string, password: string): Promise<Fireba
         throw error;
     }
 }
+
+export const recoverPassword = async (email: string): Promise<void> => {
+    try {
+        await auth().sendPasswordResetEmail(email);
+    } catch (error) {
+        console.log('error', error)
+        throw error;
+    }
+}
