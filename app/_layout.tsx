@@ -3,12 +3,12 @@ import { Slot, Stack, useRouter, useSegments } from 'expo-router'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import Spinner from 'react-native-loading-spinner-overlay'
 import auth from '@react-native-firebase/auth';
-
+import { useReactQueryDevTools } from '@dev-plugins/react-query';
 
 const RootLayout = () => {
 
     const clientQuery = new QueryClient()
-
+    useReactQueryDevTools(clientQuery);
   const [initializing, setInitializing] = useState(false);
   const [user, setUser] = useState();
 
@@ -34,7 +34,7 @@ const RootLayout = () => {
 
     const inAuthGroup = segments[0] === '(auth)'
     if (user && !inAuthGroup) {
-      router.replace('(auth)/groups')
+      router.replace('/profile')
     } else if (!user && inAuthGroup) {
       router.replace('/')
     }

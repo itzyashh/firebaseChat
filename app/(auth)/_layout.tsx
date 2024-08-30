@@ -11,14 +11,13 @@ const TabLayout = () => {
         tabBarInactiveTintColor: '#17153B',
         tabBarStyle: {
             backgroundColor: '#433D8B',
-            borderTopWidth: 0
         },
-        headerShown: false
     }}
     initialRouteName='groups'>
-        <Tabs.Screen name="groups" 
+        <Tabs.Screen name="chat" 
             options={{
-                title: 'Groups',
+                tabBarLabel: 'Chats',
+                headerShown: false,
                 tabBarIcon: ({focused, color, size}) => (
                     <FontAwesome name="users" size={size} color={color} />
                 )
@@ -26,6 +25,7 @@ const TabLayout = () => {
             />
             <Tabs.Screen name="profile"
                 options={{
+                    headerShown: false,
                     title: 'Profile',
                     tabBarIcon: ({focused, color, size}) => (
                         <FontAwesome name="user" size={size} color={color} />

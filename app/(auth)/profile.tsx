@@ -1,4 +1,4 @@
-import { View, StyleSheet, Image, Pressable, Text } from 'react-native'
+import { View, StyleSheet, Image, Pressable, Text, Button } from 'react-native'
 import React, { useState } from 'react'
 import * as ImagePicker from 'expo-image-picker'
 import { firebase } from '@react-native-firebase/auth'
@@ -14,6 +14,7 @@ const Page = () => {
   const [image, setImage] = useState<string | null>(null);
   const placeholder = require('../../assets/images/profile-placeholder.jpg');
   const user = firebase.auth().currentUser;
+  const auth = firebase.auth;
 
 
   const openImagePicker = async () => {
@@ -75,6 +76,7 @@ const Page = () => {
         <Text style={styles.name}>{user?.displayName}</Text>
         <Text style={styles.email}>{user?.email}</Text>
       </View>
+      <Button title="Logout" onPress={() => auth().signOut()} />
     </View>
   )
 }
