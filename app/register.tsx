@@ -8,9 +8,9 @@ import firestore, { setDoc } from '@react-native-firebase/firestore'
 
 const Page = () => {
 
-    const [username, setUsername] = React.useState('itzyashh')
-    const [password, setPassword] = React.useState('123456@fb')
-    const [email, setEmail] = React.useState('yashjadhav1502@gmail.com')
+    const [username, setUsername] = React.useState('')
+    const [password, setPassword] = React.useState('')
+    const [email, setEmail] = React.useState('')
 
     const { mutate } = useMutation<FirebaseAuthTypes.UserCredential>({
         mutationFn: async () => registerUser(email, password),

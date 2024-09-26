@@ -6,8 +6,8 @@ import { loginUser } from '@/api'
 import { FirebaseAuthTypes } from '@react-native-firebase/auth';
 const Page = () => {
 
-    const [email, setEmail] = useState('yash@rndev.com')
-    const [password, setPassword] = useState('123456@fb')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
     const {mutate, isPending} = useMutation<FirebaseAuthTypes.UserCredential>({
         mutationFn: async () => loginUser( email, password),
